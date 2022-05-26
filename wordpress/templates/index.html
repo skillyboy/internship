@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Blog
+{% endblock title %}
+
+
+{% block content %}
+<div class="hero row ">
+  <div class=" hero-text col-6 col-sm-6 col-md-12 col-lg-6">
+    <div>
+      <a class="dropdown-item" >Latest blogs</a> 
+          <i> </b><h1>Blog</h1></b> </i>
+        <form class ='mx-auto' style="width:400px;" method="POST" action="{% url 'blogs' %}">
+          {% csrf_token %}
+          <label>Old post</label>
+          <input type="checkbox" value="Ronaldo">
+          <label>Latest post</label>
+          <input type="checkbox" value="Messi"> 
+          <button type="submit" >Check</button>
+        </form> 
+    </div>
+  </div>
+
+
+    <div class=" grid-item col-6 col-sm-6 col-md-6 col-lg-6">    
+      <div class=" grid-item row p-4 bg-info">         
+        <div class="container text-center text-warning bg-dark p-2">
+          <h3> <strong><i><u>Latest blogs</u> </i></strong></h3> 
+        </div> 
+          <div class="w3-content w3-margin-top" style="max-width:1400px;">
+            {% if categories %}
+            {% for item  in categories %}
+              <div class="container-fluid m-2">       
+                <div class="w3-container w3-card w3-white w3-margin-bottom">
+                  <div class="w3-container">
+                    <h5 class="w3-opacity"><b>{{item.title}} </b></h5>
+                    <p>{{item.blog}}</p>
+                    <hr>
+                  </div>
+              </div>
+            {% endfor %}
+            {% endif %}   
+          </div>
+      </div>
+    </div> 
+
+
+{% endblock content %}
