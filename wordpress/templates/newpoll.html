@@ -1,0 +1,16 @@
+{% if new %}
+    {% for item  in new %}
+        <div class="card m-3" style="width: 18rem;">
+            <div class="card-header">
+                Poll created by :{{item.user}}
+            <b><p class="mb-0">Question : {{item.question}}</p></b> 
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{item.answer1}} </li>
+                <li class="list-group-item">{{item.answer2}}</li>
+                <li class="list-group-item">{{item.answer3}}</li>
+                <li class="list-group-item">{{item.answer4}}</li>
+            </ul>
+        </div>
+    {% endfor %}
+{% endif %} 

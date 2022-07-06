@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+POll
+{% endblock title %}
+
+
+{% block content %}
+
+
+
+<div class="card-header bg-secondary">
+  <h4 class="card-title">Skills exhibition :This is a replica of the homepage(index) using AXIO and javascripts to get the data in real time without having to reload the page.(when you input anew data)</h4>
+
+  <ul class="nav nav-tabs card-header-tabs">
+
+    <li class="nav-item bg-dark">
+      <a href="{% url 'profile' %}" class="nav-link" href="#">My Profile</a>
+    </li>
+
+  </ul>
+</div>
+
+<div class="hero row bg-info  bg-secondary">
+  <div class=" hero-text col-6 col-sm-6 col-md-12 col-lg-4 m-5" width="10">
+    <div>
+
+      <form class="form">
+          <div class="card bg-dark">
+              
+              <div class="card-header alert alert-success">
+               <b> {{user.username|title}}</b>, create a new poll
+              </div>
+
+              <div class="card-body alert alert-success">
+                <div class="form-group">
+                  <h5 class="card-title">Enter Question Here</h5>
+                  <textarea type="text"  class="form-control content" id="exampleInputEmail1" name="question" height="50" placeholder="Enter A Question Here e.g,  What is your favourite dog?" ></textarea>
+                </div>
+              </div>
+
+
+            <div class="form-group alert alert-success">
+              <label for="exampleInputEmail1">Option 1</label>
+              <input type="text" class="form-control option1" id="exampleInputEmail1" name="opt1" aria-describedby="emailHelp" required>
+            </div>
+            <div class="form-group alert alert-success">
+              <label for="exampleInputEmail1">Option 2</label>
+              <input type="text" class="form-control option2" id="exampleInputEmail1" name="opt2" aria-describedby="emailHelp" required>
+            </div>
+            <div class="form-group alert alert-success">
+              <label for="exampleInputEmail1">Option 3</label>
+              <input type="text" class="form-control option3" id="exampleInputEmail1" name="opt3" aria-describedby="emailHelp" required>
+            </div>
+            <div class="form-group alert alert-success">
+              <label for="exampleInputEmail1">Option 4</label>
+              <input type="text" class="form-control option4" id="exampleInputEmail1" name="opt4" aria-describedby="emailHelp" required>
+            </div>
+
+            <button class="btn btn-primary col-sm-3 mx-auto" >Create a poll</button>
+
+          
+          </div>
+          
+          </form> 
+
+
+    </div>
+  </div>
+
+
+    <div class=" grid-item col-6 col-sm-6 col-md-6 col-lg-6">    
+    <div class=" grid-item row p-4 bg-info"> 
+
+      <button type="submit" class="pollbtn">Display</button>
+        <div class="container text-center text-warning bg-dark p-2">
+          <h3> <strong><i><u> POLLS</u> </i></strong></h3> 
+        </div> 
+          <div class="w3-content w3-margin-top" style="max-width:1400px;">
+            <div class="alert alert-success row pollhere" role="alert">
+              <hr>
+
+            </div>
+          </div>
+    </div>
+    </div> 
+
+
+{% endblock content %}
