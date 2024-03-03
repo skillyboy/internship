@@ -14,6 +14,7 @@ class Poll(models.Model):
     def __str__(self):
         return self.question 
 
+
     class Meta:
         db_table = 'log'
         managed = True
